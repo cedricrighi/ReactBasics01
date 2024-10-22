@@ -33,20 +33,11 @@ function App() {
 	const [pokemonIndex, setPokemonIndex] = useState(0);
 	return (
 		<div>
-			{pokemonIndex > 0 ? (
-				<NavBar
-					pokemonIndex={pokemonIndex}
-					setPokemonIndex={setPokemonIndex}
-					message={"Précédent"}
-				/>
-			) : null}
-			{pokemonIndex < pokemonList.length - 1 ? (
-				<NavBar
-					pokemonIndex={pokemonIndex}
-					setPokemonIndex={setPokemonIndex}
-					message={"Suivant"}
-				/>
-			) : null}
+			<NavBar
+				pokemonIndex={pokemonIndex}
+				setPokemonIndex={setPokemonIndex}
+				pokemonList={pokemonList}
+			/>
 			<PokemonCard
 				name={pokemonList[pokemonIndex].name}
 				imgSrc={pokemonList[pokemonIndex].imgSrc}

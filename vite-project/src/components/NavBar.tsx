@@ -1,24 +1,24 @@
+interface Pokemon {
+	name: string;
+	imgSrc?: string;
+}
+
 interface NavBarProps {
 	pokemonIndex: number;
 	setPokemonIndex: (index: number) => void;
-	message: string;
+	pokemonList: Pokemon[];
 }
 
-export default function NavBar({
-	pokemonIndex,
-	setPokemonIndex,
-	message,
-}: NavBarProps) {
+export default function NavBar({ pokemonList }: NavBarProps) {
 	return (
 		<>
-			<button
-				type="button"
-				onClick={() => {
-					setPokemonIndex(pokemonIndex - 1);
-				}}
-			>
-				{message}
-			</button>
+			{pokemonList.map((pokemon) => {
+				return (
+					<button type="button" key={pokemon.name}>
+						{pokemon.name}
+					</button>
+				);
+			})}
 		</>
 	);
 }
