@@ -44,7 +44,7 @@ function App() {
 				<NavBar
 					pokemonIndex={pokemonIndex}
 					setPokemonIndex={setPokemonIndex}
-					message={"Précédent"}
+					message={"Suivant"}
 				/>
 			) : null}
 			<PokemonCard
